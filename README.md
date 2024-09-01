@@ -15,14 +15,14 @@ PaperMC runs with [aikar's optimized flags](https://mcflags.emc.gs) in order to 
 
 Launch the container, this will create the PaperMC directory in your current directory
 
-*optional: set `-Xms2G -Xmx2G` to the Amount of RAM to allocate to PaperMC*
+*optional: set `-Xms16G -Xmx16G` to the Amount of RAM to allocate to PaperMC*
 
 ### `docker run`
 
 ```bash
 $ docker run \
     -v $(pwd)/papermc:/papermc \
-    -e JAVA_TOOL_OPTIONS="-Xms2G -Xmx2G" \
+    -e JAVA_TOOL_OPTIONS="-Xms16G -Xmx16G" \
     -p 25565:25565 \
     guillaumedsde/papermc-docker-distroless:latest
 ```
@@ -37,7 +37,7 @@ services:
         volumes:
             - '<data_dir>/papermc:/papermc'
         environment:
-            - 'JAVA_TOOL_OPTIONS=-Xms2G -Xmx2G'
+            - 'JAVA_TOOL_OPTIONS=-Xms16G -Xmx16G'
         ports:
             - '25565:25565'
         image: guillaumedsde/papermc-docker-distroless:latest
